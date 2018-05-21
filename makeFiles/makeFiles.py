@@ -1,3 +1,9 @@
+import datetime
+
+class makeFiles():	
+	def __init__(self, docDate=None):
+		self.docDate = str(
+	
 	def makeTxt(self):
         tFileThing = open("new.txt", "w")
         tFileThing.write('Author: \n')
