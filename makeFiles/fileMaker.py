@@ -125,6 +125,19 @@ class FileMaker(tk.Frame):
         tFileThing.write(getStuff.formDocDate())
         tFileThing.close()
         messagebox.showinfo("Info", "A new txt file named 'new' has been created")
+		
+	def makeHtml(self):
+		hFileThing = open("new.html", "w")
+		hFileThing.write("<!doctype html>\n")
+		hFileThing.write("<html>\n")
+		hFileThing.write("<head>\n")
+		hFileThing.write("<title></title>\n")
+		hFileThing.write("</head>\n")
+		hFileThing.write("<body>\n")
+		hFileThing.write("</body>\n")
+		hFileThing.write("</html>\n")
+		hFileThing.close()
+		messagebox.showinfo("Info", "A new html file named 'new' has been created"
 
 	# makes a simple Go file
     def makeGo(self):
