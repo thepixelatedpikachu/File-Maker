@@ -1,9 +1,10 @@
 # Author: John Paul Antonovich
+
 import tkinter
 from tkinter import messagebox
 from classTools import NeatStuff
 import tkinter as tk
-
+import random
 
 getStuff = NeatStuff()
 
@@ -15,11 +16,11 @@ class FileMaker(tk.Frame):
 
         self.build_grid()
         self.build_tip()
-		self.build_banner()
+        self.build_banner()
         self.build_buttons()
 
 
-	def build_tip(self):
+    def build_tip(self):
         assortedTips = ["the moon is NOT \n made of cheese!",
                         "Never forget to commit \n your projects in Git.",
                         "Never import more \n libraries than you use in Python.",
@@ -32,22 +33,22 @@ class FileMaker(tk.Frame):
             text=str("Tip: " + random.choice(assortedTips)),
             fg='black',
         )
-        
+
         coolTip.grid(
             row=0, column=0,
             sticky='ew',
             padx=10, pady=10
         )
 
-	
-	def build_grid(self):
+
+    def build_grid(self):
         self.mainframe.columnconfigure(0, weight=1)
         self.mainframe.rowconfigure(0, weight=0)
         self.mainframe.rowconfigure(1, weight=1)
         self.mainframe.rowconfigure(2, weight=0)
 
-    
-	def build_banner(self):
+
+    def build_banner(self):
         banner = tkinter.Label(
             self.mainframe,
             background='orange',
@@ -94,7 +95,7 @@ class FileMaker(tk.Frame):
             command = self.makeCpp,
 			fg = "lightblue"
         )
-        
+
         self.go_button = tkinter.Button(
             buttons_frame,
             text="Make new go file",
@@ -115,21 +116,21 @@ class FileMaker(tk.Frame):
         tFileThing.write(getStuff.formDocDate())
         tFileThing.close()
         messagebox.showinfo("Info", "A txt file named 'new' has been created")
-        
-    
-	def makeGo(self):
+
+
+    def makeGo(self):
         gFileThing = open("new.go", "w")
         gFileThing.write("package main \n")
-		gFileThing.write("// Author: \n")
+        gFileThing.write("// Author: \n")
         gFileThing.write("// " + getStuff.formDocDate() + " \n\n")
-		gFileThing.write("func main() { \n")
-		gFileThing.write("    // add code here \n")
-		gFileThing.write("}")
+        gFileThing.write("func main() { \n")
+        gFileThing.write("    // add code here \n")
+        gFileThing.write("}")
         gFileThing.close()
         messagebox.showinfo("Info", "A Go file named 'new' has been created")
 
-    
-	def makePy(self):
+
+    def makePy(self):
         pFileThing = open("new.py", "w")
         pFileThing.write('# Author: \n')
         pFileThing.write('# '+str(getStuff.formDocDate()) + '\n')
@@ -141,8 +142,8 @@ class FileMaker(tk.Frame):
         pFileThing.close()
         messagebox.showinfo("Info", "A Python file named 'new' has been created")
 
-    
-	def makeCpp(self):
+
+    def makeCpp(self):
         cFileThing = open("new.cpp", "w")
         cFileThing.write('// Author: \n')
         cFileThing.write('// '+str(getStuff.formDocDate()) + '\n\n')
@@ -157,8 +158,8 @@ class FileMaker(tk.Frame):
         cFileThing.close()
         messagebox.showinfo("Info", "A C++ file named 'new' has been created")
 
-    
-	def makeJava(self):
+
+    def makeJava(self):
         jFileThing = open("new.java", "w")
         jFileThing.write('// Author: \n')
         jFileThing.write('// '+str(getStuff.formDocDate()) + '\n\n')
