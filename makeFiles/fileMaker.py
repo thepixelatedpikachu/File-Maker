@@ -2,11 +2,11 @@
 
 import tkinter
 from tkinter import messagebox
-from classTools import NeatStuff
 import tkinter as tk
 import random
 
-getStuff = NeatStuff()
+
+docDate = str(datetime.today().strftime('%Y-%m-%d')) # using 'str' will increase app performance
 
 class FileMaker(tk.Frame):
     def __init__(self, master=None):
@@ -122,7 +122,7 @@ class FileMaker(tk.Frame):
 	def makeTxt(self):
         tFileThing = open("new.txt", "w")
         tFileThing.write('Author: \n')
-        tFileThing.write(getStuff.formDocDate())
+        tFileThing.write(docDate)
         tFileThing.close()
         messagebox.showinfo("Info", "A new txt file named 'new' has been created")
 		
@@ -144,7 +144,7 @@ class FileMaker(tk.Frame):
         gFileThing = open("new.go", "w")
         gFileThing.write("package main \n")
         gFileThing.write("// Author: \n")
-        gFileThing.write("// " + getStuff.formDocDate() + " \n\n")
+        gFileThing.write("// " + str(docDate) + " \n\n")
         gFileThing.write("func main() { \n")
         gFileThing.write("    // add code here \n")
         gFileThing.write("}")
@@ -155,7 +155,7 @@ class FileMaker(tk.Frame):
     def makePy(self):
         pFileThing = open("new.py", "w")
         pFileThing.write('# Author: \n')
-        pFileThing.write('# '+str(getStuff.formDocDate()) + '\n')
+        pFileThing.write('# '+str(docDate) + '\n')
         pFileThing.write('import random \n')
         pFileThing.write('import datetime \n')
         pFileThing.write('import pprint \n')
@@ -168,7 +168,7 @@ class FileMaker(tk.Frame):
     def makeCpp(self):
         cFileThing = open("new.cpp", "w")
         cFileThing.write('// Author: \n')
-        cFileThing.write('// '+str(getStuff.formDocDate()) + '\n\n')
+        cFileThing.write('// '+str(docDate) + '\n\n')
         cFileThing.write('#include <iostream>\n')
         cFileThing.write('#include <string>\n')
         cFileThing.write('using namespace std;\n\n')
@@ -184,7 +184,7 @@ class FileMaker(tk.Frame):
     def makeJava(self):
         jFileThing = open("new.java", "w")
         jFileThing.write('// Author: \n')
-        jFileThing.write('// '+str(getStuff.formDocDate()) + '\n\n')
+        jFileThing.write('// '+str(docDate) + '\n\n')
         jFileThing.write('import java.io.Console;\n\n')
         jFileThing.write('public class new {\n\n')
         jFileThing.write('public static void(String[] args) {\n')
