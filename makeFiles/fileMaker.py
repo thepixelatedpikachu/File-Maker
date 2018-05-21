@@ -12,14 +12,36 @@ getStuff = NeatStuff()
 class FileMaker(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
-        self.mainframe = tkinter.Frame(self.master, bg='white')
-        self.mainframe.pack(fill=None, expand=True) #fill=tkinter.BOTH
+        self.mainframe = tkinter.Frame(self.master)
+        self.mainframe.pack(fill=None, expand=True)
 
         self.build_grid()
-        self.build_banner()
+        self.build_tip()
+		self.build_banner()
         self.build_buttons()
 
-    def build_grid(self):
+
+	def build_tip(self):
+        assortedTips = ["the moon is NOT \n made of cheese!",
+                        "Never forget to commit \n your projects in Git.",
+                        "Never import more \n libraries than you use in Python.",
+                        "Read more books!"
+        ]
+
+        coolTip = tkinter.Label(
+            self.mainframe,
+            background="white",
+            text=str("Tip: " + random.choice(assortedTips)),
+            fg='black',
+        )
+        
+        coolTip.grid(
+            row=0, column=0,
+            sticky='ew',
+            padx=10, pady=10
+        )
+
+	def build_grid(self):
         self.mainframe.columnconfigure(0, weight=1)
         self.mainframe.rowconfigure(0, weight=0)
         self.mainframe.rowconfigure(1, weight=1)
