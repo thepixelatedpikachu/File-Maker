@@ -92,7 +92,7 @@ class FileMaker(tk.Frame):
 
         self.py_button = tkinter.Button(
             buttons_frame,
-            text='Make new Python file',
+            text='Make brand new Python file',
             command = self.makePy,
 	    	fg = "pink"
         )
