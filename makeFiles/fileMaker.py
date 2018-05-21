@@ -39,13 +39,15 @@ class FileMaker(tk.Frame):
             padx=10, pady=10
         )
 
+	
 	def build_grid(self):
         self.mainframe.columnconfigure(0, weight=1)
         self.mainframe.rowconfigure(0, weight=0)
         self.mainframe.rowconfigure(1, weight=1)
         self.mainframe.rowconfigure(2, weight=0)
 
-    def build_banner(self):
+    
+	def build_banner(self):
         banner = tkinter.Label(
             self.mainframe,
             background='orange',
@@ -114,18 +116,20 @@ class FileMaker(tk.Frame):
         tFileThing.close()
         messagebox.showinfo("Info", "A txt file named 'new' has been created")
         
-    def makeGo(self):
+    
+	def makeGo(self):
         gFileThing = open("new.go", "w")
         gFileThing.write("package main \n")
 		gFileThing.write("// Author: \n")
         gFileThing.write("// " + getStuff.formDocDate() + " \n\n")
 		gFileThing.write("func main() { \n")
-		gFileThing.write("// add code here \n")
+		gFileThing.write("    // add code here \n")
 		gFileThing.write("}")
         gFileThing.close()
         messagebox.showinfo("Info", "A Go file named 'new' has been created")
 
-    def makePy(self):
+    
+	def makePy(self):
         pFileThing = open("new.py", "w")
         pFileThing.write('# Author: \n')
         pFileThing.write('# '+str(getStuff.formDocDate()) + '\n')
@@ -137,7 +141,8 @@ class FileMaker(tk.Frame):
         pFileThing.close()
         messagebox.showinfo("Info", "A Python file named 'new' has been created")
 
-    def makeCpp(self):
+    
+	def makeCpp(self):
         cFileThing = open("new.cpp", "w")
         cFileThing.write('// Author: \n')
         cFileThing.write('// '+str(getStuff.formDocDate()) + '\n\n')
@@ -152,7 +157,8 @@ class FileMaker(tk.Frame):
         cFileThing.close()
         messagebox.showinfo("Info", "A C++ file named 'new' has been created")
 
-    def makeJava(self):
+    
+	def makeJava(self):
         jFileThing = open("new.java", "w")
         jFileThing.write('// Author: \n')
         jFileThing.write('// '+str(getStuff.formDocDate()) + '\n\n')
