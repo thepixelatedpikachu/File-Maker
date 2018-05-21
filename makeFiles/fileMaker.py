@@ -68,11 +68,18 @@ class FileMaker(tk.Frame):
             text="Make new cpp file",
             command = self.makeCpp
         )
+        
+        self.go_button = tkinter.Button(
+            buttons_frame,
+            text="Make new go file",
+            command = self.makeCpp
+        )
 
         self.txt_button.grid(row=0, column=0, sticky='s')
         self.py_button.grid(row=1, column=0, sticky='s')
         self.cpp_button.grid(row=2, column=0, sticky='s')
         self.java_button.grid(row=3, column=0, sticky='s')
+        self.go_button.grid(row=4, column=0, sticky='s')
 
 
     def makeTxt(self):
@@ -81,6 +88,16 @@ class FileMaker(tk.Frame):
         tFileThing.write(getStuff.formDocDate())
         tFileThing.close()
         messagebox.showinfo("Info", "A txt file named 'new' has been created")
+        
+    def makeGo(self):
+        gFileThing = open("new.go", "w")
+        gFileThing.write("package main \n")
+		gFileThing.write("// Author: \n")
+        gFileThing.write("// " + getStuff.formDocDate() + " \n\n")
+		gFileThing.write("func main() { \n")
+		gFileThing.write("}")
+        gFileThing.close()
+        messagebox.showinfo("Info", "A Go file named 'new' has been created")
 
     def makePy(self):
         pFileThing = open("new.py", "w")
