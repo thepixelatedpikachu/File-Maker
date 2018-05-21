@@ -2,12 +2,12 @@ import datetime
 
 class makeFiles():	
 	def __init__(self, docDate=None):
-		self.docDate = str(
+		self.docDate = str(datetime.today().strftime('%Y-%m-%d')) # using 'str' will increase app performance
 	
 	def makeTxt(self):
         tFileThing = open("new.txt", "w")
         tFileThing.write('Author: \n')
-        tFileThing.write(docDate)
+        tFileThing.write(self.docDate)
         tFileThing.close()
         messagebox.showinfo("Info", "A new txt file named 'new' has been created")
 		
@@ -29,7 +29,7 @@ class makeFiles():
         gFileThing = open("new.go", "w")
         gFileThing.write("package main \n")
         gFileThing.write("// Author: \n")
-        gFileThing.write("// " + str(docDate) + " \n\n")
+        gFileThing.write("// " + str(self.docDate) + " \n\n")
         gFileThing.write("func main() { \n")
         gFileThing.write("    // add code here \n")
         gFileThing.write("}")
@@ -40,7 +40,7 @@ class makeFiles():
     def makePy(self):
         pFileThing = open("new.py", "w")
         pFileThing.write('# Author: \n')
-        pFileThing.write('# '+str(docDate) + '\n')
+        pFileThing.write('# '+str(self.docDate) + '\n')
         pFileThing.write('import random \n')
         pFileThing.write('import datetime \n')
         pFileThing.write('import pprint \n')
@@ -53,7 +53,7 @@ class makeFiles():
     def makeCpp(self):
         cFileThing = open("new.cpp", "w")
         cFileThing.write('// Author: \n')
-        cFileThing.write('// '+str(docDate) + '\n\n')
+        cFileThing.write('// '+str(self.docDate) + '\n\n')
         cFileThing.write('#include <iostream>\n')
         cFileThing.write('#include <string>\n')
         cFileThing.write('using namespace std;\n\n')
@@ -69,7 +69,7 @@ class makeFiles():
     def makeJava(self):
         jFileThing = open("new.java", "w")
         jFileThing.write('// Author: \n')
-        jFileThing.write('// '+str(docDate) + '\n\n')
+        jFileThing.write('// '+str(self.docDate) + '\n\n')
         jFileThing.write('import java.io.Console;\n\n')
         jFileThing.write('public class new {\n\n')
         jFileThing.write('public static void(String[] args) {\n')
@@ -79,3 +79,4 @@ class makeFiles():
         jFileThing.write('}\n')
         jFileThing.close()
         messagebox.showinfo("Info", "A new java file named 'new' has been created")
+
