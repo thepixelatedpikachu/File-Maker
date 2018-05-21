@@ -21,10 +21,11 @@ class FileMaker(tk.Frame):
 
 	# builds a random tip
     def build_tip(self):
-        assortedTips = ["the moon is NOT \n made of cheese!",
-                        "Never forget to commit \n your projects in Git.",
-                        "Never import more \n libraries than you use in Python.",
-                        "Read more books!"
+        assortedTips = [
+			"the moon is NOT \n made of cheese!",
+            "Never forget to commit \n your projects in Git.",
+            "Never import more \n libraries than you use in Python.",
+            "Read more books!"
         ]
 
         coolTip = tkinter.Label(
@@ -116,7 +117,7 @@ class FileMaker(tk.Frame):
         tFileThing.write('Author: \n')
         tFileThing.write(getStuff.formDocDate())
         tFileThing.close()
-        messagebox.showinfo("Info", "A txt file named 'new' has been created")
+        messagebox.showinfo("Info", "A new txt file named 'new' has been created")
 
 	# makes a simple Go file
     def makeGo(self):
@@ -128,7 +129,7 @@ class FileMaker(tk.Frame):
         gFileThing.write("    // add code here \n")
         gFileThing.write("}")
         gFileThing.close()
-        messagebox.showinfo("Info", "A Go file named 'new' has been created")
+        messagebox.showinfo("Info", "A new Go file named 'new' has been created")
 
 	# makes a simple python file
     def makePy(self):
@@ -141,7 +142,7 @@ class FileMaker(tk.Frame):
         pFileThing.write('import os \n')
         pFileThing.write('import tkinter \n')
         pFileThing.close()
-        messagebox.showinfo("Info", "A Python file named 'new' has been created")
+        messagebox.showinfo("Info", "A new Python file named 'new' has been created")
 
 	# makes a simple c++ file
     def makeCpp(self):
@@ -157,7 +158,7 @@ class FileMaker(tk.Frame):
         cFileThing.write('  return 0;\n')
         cFileThing.write('}')
         cFileThing.close()
-        messagebox.showinfo("Info", "A C++ file named 'new' has been created")
+        messagebox.showinfo("Info", "A C++ new file named 'new' has been created")
 
 	# makes a simple Java file
     def makeJava(self):
@@ -172,7 +173,7 @@ class FileMaker(tk.Frame):
         jFileThing.write('\t}\n')
         jFileThing.write('}\n')
         jFileThing.close()
-        messagebox.showinfo("Info", "A java file named 'new' has been created")
+        messagebox.showinfo("Info", "A new java file named 'new' has been created")
 
 # safely runs program
 if __name__ == '__main__':
