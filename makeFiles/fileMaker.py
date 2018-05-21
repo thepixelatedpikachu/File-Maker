@@ -69,7 +69,14 @@ class FileMaker(tk.Frame):
         buttons_frame.columnconfigure(0, weight=1)
         buttons_frame.columnconfigure(1, weight=1)
 
-        self.txt_button = tkinter.Button(
+        self.html_button = tkinter.Button(
+			buttons_frame,
+			text="Make new Html file",
+			command = self.makeHtml,
+			fg = "blue"
+		)
+		
+		self.txt_button = tkinter.Button(
             buttons_frame,
             text='Make new txt file',
             command = self.makeTxt,
@@ -109,7 +116,7 @@ class FileMaker(tk.Frame):
         self.cpp_button.grid(row=2, column=0, sticky='s')
         self.java_button.grid(row=3, column=0, sticky='s')
         self.go_button.grid(row=4, column=0, sticky='s')
-
+		self.html_button.grid(row=5, column=0, sticky='s')
 
     # makes a simple txt file
 	def makeTxt(self):
