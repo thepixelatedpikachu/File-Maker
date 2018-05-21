@@ -1,11 +1,9 @@
 # Author: John Paul Antonovich
-
 import tkinter
 from tkinter import messagebox
-import datetime
-import os
 from classTools import NeatStuff
 import tkinter as tk
+
 
 getStuff = NeatStuff()
 
