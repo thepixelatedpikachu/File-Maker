@@ -50,7 +50,7 @@ class FileMaker(tk.Frame):
     def build_banner(self):
         banner = tkinter.Label(
             self.mainframe,
-            background='pink',
+            background='orange',
             text="File Maker",
             fg='black',
             font=('Helvetica', 24)
@@ -70,31 +70,36 @@ class FileMaker(tk.Frame):
         self.txt_button = tkinter.Button(
             buttons_frame,
             text='Make new txt file',
-            command = self.makeTxt
+            command = self.makeTxt,
+			fg = "grey"
         )
 
         self.java_button = tkinter.Button(
             buttons_frame,
             text='Make new java file',
-            command = self.makeJava
+            command = self.makeJava,
+			fg = "green"
         )
 
         self.py_button = tkinter.Button(
             buttons_frame,
             text='Make new Python file',
-            command = self.makePy
+            command = self.makePy,
+	    	fg = "pink"
         )
 
         self.cpp_button = tkinter.Button(
             buttons_frame,
             text="Make new cpp file",
-            command = self.makeCpp
+            command = self.makeCpp,
+			fg = "lightblue"
         )
         
         self.go_button = tkinter.Button(
             buttons_frame,
             text="Make new go file",
-            command = self.makeCpp
+            command = self.makeCpp,
+			fg = "brown"
         )
 
         self.txt_button.grid(row=0, column=0, sticky='s')
@@ -117,6 +122,7 @@ class FileMaker(tk.Frame):
 		gFileThing.write("// Author: \n")
         gFileThing.write("// " + getStuff.formDocDate() + " \n\n")
 		gFileThing.write("func main() { \n")
+		gFileThing.write("// add code here \n")
 		gFileThing.write("}")
         gFileThing.close()
         messagebox.showinfo("Info", "A Go file named 'new' has been created")
