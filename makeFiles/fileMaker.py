@@ -88,6 +88,13 @@ class FileMaker(tk.Frame):
             command = self.makePy,
 	    	fg = "pink"
         )
+		
+		self.html_button = tkinter.Button(
+			buttons_frame,
+			text="Make new Html file",
+			command = self.makeHtml,
+			fg = "blue"
+		)
 
         self.cpp_button = tkinter.Button(
             buttons_frame,
@@ -117,8 +124,20 @@ class FileMaker(tk.Frame):
         tFileThing.close()
         messagebox.showinfo("Info", "A txt file named 'new' has been created")
 
-
-    def makeGo(self):
+	def makeHtml(self):
+		hFileThing = open("new.html", "w")
+		hFileThing.write("<!doctype html>\n")
+		hFileThing.write("<html>\n")
+		hFileThing.write("<head>\n")
+		hFileThing.write("<title></title>\n")
+		hFileThing.write("</head>\n")
+		hFileThing.write("<body>\n")
+		hFileThing.write("</body>\n")
+		hFileThing.write("</html>\n")
+		hFileThing.close()
+		messagebox.showinfo("Info", "A new html file named 'new' has been created"
+    
+	def makeGo(self):
         gFileThing = open("new.go", "w")
         gFileThing.write("package main \n")
         gFileThing.write("// Author: \n")
