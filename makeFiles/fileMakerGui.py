@@ -7,7 +7,6 @@ import random
 from makeFiles import makeFile
 
 makeSomeFiles = makeFile()
-docDate = str(datetime.today().strftime('%Y-%m-%d')) # using 'str' will increase app performance
 
 class FileMaker(tk.Frame):
     def __init__(self, master=None):
@@ -73,42 +72,42 @@ class FileMaker(tk.Frame):
         self.html_button = tkinter.Button(
 			buttons_frame,
 			text="Make new Html file",
-			command = self.makeFile().makeHtml(),
+			command = makeFile().makeHtml(),
 			fg = "blue"
 		)
 		
 		self.txt_button = tkinter.Button(
             buttons_frame,
             text='Make new txt file',
-            command = self.makeTxt,
+            command = makeFile().makeTxt(),
 			fg = "grey"
         )
 
         self.java_button = tkinter.Button(
             buttons_frame,
             text='Make new java file',
-            command = self.makeJava,
+            command = makeFile().makeJava(),
 			fg = "green"
         )
 
         self.py_button = tkinter.Button(
             buttons_frame,
             text='Make new Python file',
-            command = self.makePy,
+            command = makeFile().makePy(),
 	    	fg = "pink"
         )
 
         self.cpp_button = tkinter.Button(
             buttons_frame,
             text="Make new cpp file",
-            command = self.makeCpp,
+            command = makeFile().makeCpp(),
 			fg = "lightblue"
         )
 
         self.go_button = tkinter.Button(
             buttons_frame,
             text="Make new go file",
-            command = self.makeCpp,
+            command = makeFile().makeGo(),
 			fg = "brown"
         )
 
