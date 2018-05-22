@@ -4,8 +4,9 @@ import tkinter
 from tkinter import messagebox
 import tkinter as tk
 import random
-from makeFiles import MakeFile
+from makeFiles import makeFile
 
+makeSomeFiles = makeFile()
 docDate = str(datetime.today().strftime('%Y-%m-%d')) # using 'str' will increase app performance
 
 class FileMaker(tk.Frame):
@@ -72,7 +73,7 @@ class FileMaker(tk.Frame):
         self.html_button = tkinter.Button(
 			buttons_frame,
 			text="Make new Html file",
-			command = self.makeHtml,
+			command = self.makeFile().makeHtml(),
 			fg = "blue"
 		)
 		
