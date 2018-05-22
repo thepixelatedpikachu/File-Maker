@@ -1,6 +1,6 @@
 import datetime
 
-class makeFiles():	
+class makeFile():	
 	def __init__(self, docDate=None):
 		self.docDate = str(datetime.today().strftime('%Y-%m-%d')) # using 'str' will increase app performance
 	
